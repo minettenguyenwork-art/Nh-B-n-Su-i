@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SỬA 4 DÒNG DƯỚI CHO TỪNG ĐƠN: đây là nội dung hiện khi gửi link qua Zalo/Facebook -->
+  <title>Minh Anh & Thu Hà — Thiệp mời cưới</title>
+  <meta property="og:title" content="Minh Anh & Thu Hà — 20.12.2026">
+  <meta property="og:description" content="Trân trọng kính mời bạn đến dự lễ cưới của chúng mình">
+  <meta property="og:image" content="https://picsum.photos/id/1059/1200/630">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Màn mở thiệp -->
+  <div id="phong-bi" class="phong-bi">
+    <div class="phong-bi-noi-dung">
+      <p class="nho">Thiệp mời cưới</p>
+      <h1 class="ten-script"><span data-ten="chuRe"></span> <span class="va">&amp;</span> <span data-ten="coDau"></span></h1>
+      <p class="kinh-gui" id="kinh-gui"></p>
+      <button id="nut-mo" class="nut">Mở thiệp</button>
+    </div>
+  </div>
+
+  <button id="nut-nhac" class="nut-nhac" aria-label="Bật/tắt nhạc" hidden>♪</button>
+  <audio id="nhac" loop preload="none"></audio>
+
+  <main>
+    <!-- Bìa -->
+    <section class="bia" id="bia">
+      <div class="bia-phu">
+        <p class="nho">We're getting married</p>
+        <h2 class="ten-script lon"><span data-ten="chuRe"></span><br><span class="va">&amp;</span><br><span data-ten="coDau"></span></h2>
+        <p class="ngay-lon" id="ngay-bia"></p>
+      </div>
+    </section>
+
+    <!-- Lời mời + gia đình -->
+    <section class="khoi">
+      <p class="tieu-de-nho">Trân trọng báo tin lễ thành hôn của</p>
+      <div class="hai-ben">
+        <div class="ben" id="nha-trai"></div>
+        <div class="ben" id="nha-gai"></div>
+      </div>
+      <p class="loi-moi" id="loi-moi"></p>
+    </section>
+
+    <!-- Đếm ngược -->
+    <section class="khoi nen-nhat">
+      <h3 class="tieu-de">Đếm ngược</h3>
+      <div class="dem-nguoc" id="dem-nguoc">
+        <div><b id="dn-ngay">0</b><span>Ngày</span></div>
+        <div><b id="dn-gio">0</b><span>Giờ</span></div>
+        <div><b id="dn-phut">0</b><span>Phút</span></div>
+        <div><b id="dn-giay">0</b><span>Giây</span></div>
+      </div>
+    </section>
+
+    <!-- Sự kiện -->
+    <section class="khoi">
+      <h3 class="tieu-de">Sự kiện cưới</h3>
+      <div id="su-kien" class="su-kien"></div>
+    </section>
+
+    <!-- Chuyện tình -->
+    <section class="khoi nen-nhat" id="khoi-chuyen">
+      <h3 class="tieu-de">Chuyện chúng mình</h3>
+      <div id="chuyen" class="dong-thoi-gian"></div>
+    </section>
+
+    <!-- Album -->
+    <section class="khoi">
+      <h3 class="tieu-de">Album ảnh</h3>
+      <div id="album" class="album"></div>
+    </section>
+
+    <!-- RSVP + lời chúc -->
+    <section class="khoi nen-nhat">
+      <h3 class="tieu-de">Xác nhận tham dự</h3>
+      <form id="form-rsvp" class="form">
+        <input name="ten" placeholder="Tên của bạn *" required maxlength="80">
+        <select name="thamDu">
+          <option value="Có">Tôi sẽ đến</option>
+          <option value="Không">Rất tiếc, tôi không đến được</option>
+        </select>
+        <select name="soNguoi">
+          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+        </select>
+        <textarea name="loiChuc" placeholder="Gửi lời chúc tới cô dâu chú rể..." rows="3" maxlength="500"></textarea>
+        <button class="nut" type="submit">Gửi</button>
+        <p id="ket-qua" class="ket-qua" role="status"></p>
+      </form>
+      <div id="loi-chuc" class="loi-chuc"></div>
+    </section>
+
+    <!-- Mừng cưới -->
+    <section class="khoi">
+      <h3 class="tieu-de">Hộp mừng cưới</h3>
+      <div id="mung-cuoi" class="mung-cuoi"></div>
+    </section>
+
+    <section class="khoi cam-on">
+      <p class="ten-script lon">Thank you!</p>
+    </section>
+
+    <footer class="chan-trang"><a id="chan-trang" target="_blank" rel="noopener"></a></footer>
+  </main>
+
+  <!-- Xem ảnh phóng to -->
+  <div id="lightbox" class="lightbox" hidden>
+    <button class="lb-dong" aria-label="Đóng">×</button>
+    <button class="lb-truoc" aria-label="Ảnh trước">‹</button>
+    <img alt="">
+    <button class="lb-sau" aria-label="Ảnh sau">›</button>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
